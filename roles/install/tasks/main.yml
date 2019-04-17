@@ -1,0 +1,61 @@
+- set_fact:
+    real_ansible_host: "{{ ansible_host }}"
+
+- name: Ensures /home/pi/weather-station/ dir exists
+  file: path=/home/pi/weather-station/ state=directory
+
+- name: Copy bme280_sensor.py
+  copy:
+    src: bme280_sensor.py
+    dest: /home/pi/weather-station/bme280_sensor.py
+    owner: pi
+    group: pi
+    mode: 0644
+
+- name: Copy ds18b20_therm.py
+  copy:
+    src: ds18b20_therm.py
+    dest: /home/pi/weather-station/ds18b20_therm.py
+    owner: pi
+    group: pi
+    mode: 0644
+
+- name: Copy wind.py
+  copy:
+    src: wind.py
+    dest: /home/pi/weather-station/wind.py
+    owner: pi
+    group: pi
+    mode: 0644
+
+- name: Copy wind_direction.py
+  copy:
+    src: wind_direction.py
+    dest: /home/pi/weather-station/wind_direction.py
+    owner: pi
+    group: pi
+    mode: 0644
+
+- name: Copy rain_fall.py
+  copy:
+    src: rain_fall.py
+    dest: /home/pi/weather-station/rain_fall.py
+    owner: pi
+    group: pi
+    mode: 0644
+
+- name: Copy veml6075.py
+  copy:
+    src: veml6075.py
+    dest: /home/pi/weather-station/veml6075.py
+    owner: pi
+    group: pi
+    mode: 0644
+
+- name: Copy tsl2561.py
+  copy:
+    src: tsl2561.py
+    dest: /home/pi/weather-station/tsl2561.py
+    owner: pi
+    group: pi
+    mode: 0644

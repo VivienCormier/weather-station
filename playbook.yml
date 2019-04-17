@@ -1,0 +1,11 @@
+---
+
+- name: Ansible Playbook for configuring Rasberry pi for the Weather station
+
+  hosts: raspberry
+  roles:
+    - update
+    - package
+    - install
+  remote_user: pi
+  become: yes
