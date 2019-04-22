@@ -59,3 +59,11 @@
     owner: pi
     group: pi
     mode: 0644
+
+- name: Copy collect_data.py
+  copy:
+    src: collect_data.py
+    dest: /home/pi/weather-station/collect_data.py
+    owner: pi
+    group: pi
+    mode: 0644

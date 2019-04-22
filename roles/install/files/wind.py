@@ -40,7 +40,8 @@ def reset_wind():
 wind_speed_sensor = Button(5)
 wind_speed_sensor.when_pressed = spin
 
-while True:
+
+def get_data():
     start_time = time.time()
     while time.time() - start_time <= wind_interval:
         reset_wind()
@@ -49,4 +50,7 @@ while True:
         store_speeds.append(final_speed)
     wind_gust = max(store_speeds)
     wind_speed = statistics.mean(store_speeds)
-    print(wind_speed, wind_gust)
+    return {
+        'wind_gust': wind_gust,
+        'wind_speed': wind_speed,
+    }

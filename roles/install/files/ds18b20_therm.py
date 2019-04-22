@@ -39,6 +39,10 @@ class DS18B20(object):
         return temp_c
 
 
-if __name__ == "__main__":
+def get_data():
     obj = DS18B20()
-    print("Temp: %s C" % obj.read_temp())
+    temperature = obj.read_temp()
+    # Fix bug when first data is corrupted
+    while temperature >= 80:
+        temperature = obj.read_temp()
+    return {'temperature': temperature}
