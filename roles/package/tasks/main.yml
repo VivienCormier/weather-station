@@ -13,19 +13,3 @@
 - apt:
     name: python3-pip
     state: present
-
-- pip:
-    name: RPi.bme280
-    executable: /usr/bin/pip3
-
-- pip:
-    name: adafruit-circuitpython-veml6075
-    executable: /usr/bin/pip3
-
-- pip:
-    name: adafruit-circuitpython-tsl2561
-    executable: /usr/bin/pip3
-
-- pip:
-    name: smbus-cffi
-    executable: /usr/bin/pip3
