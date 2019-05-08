@@ -1,6 +1,8 @@
 ---
 
 - name: Ansible Playbook for configuring Rasberry pi for the Weather station
+  vars_files:
+    - vars/main.yml
 
   hosts: raspberry
   roles:
