@@ -8,7 +8,7 @@ count = 0
 def bucket_tipped():
     global count
     count = count + 1
-    print (count * BUCKET_SIZE)
+    return count * BUCKET_SIZE
 
 
 def reset_rainfall():
@@ -17,7 +17,3 @@ def reset_rainfall():
 
 
 rain_sensor.when_pressed = bucket_tipped
-
-while True:
-    print (count * BUCKET_SIZE)
-

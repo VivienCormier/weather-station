@@ -1,8 +1,5 @@
 from gpiozero import MCP3008
 
-import time
-import statistics
-
 
 adc = MCP3008(channel=0)
 count = 0
@@ -25,11 +22,6 @@ volts = {0.4: "n",
          0.6: "n-w"}
 
 
-def get_data(length=5):
-    data = []
-    start_time = time.time()
-
-    while time.time() - start_time <= length:
-        wind = round(adc.value * 3.3, 1)
-        data.append(volts[wind])
-    return {'wind_direction': statistics.mode(data)}
+def get_data():
+    wind = round(adc.value * 3.3, 1)
+    return volts[wind] if wind in volts else None
