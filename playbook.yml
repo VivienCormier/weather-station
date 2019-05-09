@@ -8,6 +8,7 @@
   roles:
     - update
     - package
-    - install
+    - createdb
+    - dashboard
   remote_user: pi
   become: yes
