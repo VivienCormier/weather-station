@@ -1,0 +1,10 @@
+[Unit]
+Description=Unit for starting a basic Django app
+
+[Service]
+Restart=on-failure
+WorkingDirectory=/home/pi/weather-station-web/
+ExecStart=/home/pi/weather-station-web/.venv/bin/python manage.py runserver 0:8000
+
+[Install]
+WantedBy=multi-user.target

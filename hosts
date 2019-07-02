@@ -1,2 +1,2 @@
 [raspberry]
-192.168.2.167 ansible_python_interpreter=/usr/bin/python3
+192.168.2.182 ansible_python_interpreter=/usr/bin/python3

@@ -1,3 +1,46 @@
 ---
 
-- name: Clone Dashboard
+- name: Pull project
+  git:
+    repo: 'https://github.com/VivienCormier/weather-station-web.git'
+    dest: "/home/pi/weather-station-web"
+    version: "master"
+
+# - name: Install virutalenv
+#   pip:
+#     name: virtualenv
+#     executable: /usr/bin/pip3
+#     state: present
+
+# - name: Install requirements.txt
+#   pip:
+#     requirements: /home/pi/weather-station-web/requirements/raspberry.txt
+#     virtualenv: /home/pi/weather-station-web/.venv
+
+# - name: Migrate
+#   django_manage:
+#     command: migrate
+#     app_path: /home/pi/weather-station-web/
+#     virtualenv: /home/pi/weather-station-web/.venv
+
+# - name: Add django systemd file
+#   copy:
+#     src: django.service
+#     dest: /etc/systemd/system/django.service
+
+# - name: Add weather systemd file
+#   copy:
+#     src: weather.service
+#     dest: /etc/systemd/system/weather.service
+
+- name: start service django
+  systemd:
+    name: django
+    enabled: yes
+    state: started
+
+- name: start service weather
+  systemd:
+    name: weather
+    enabled: yes
+    state: restarted

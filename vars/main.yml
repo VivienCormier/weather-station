@@ -1,3 +1,4 @@
 ---
-db_user: dev
+db_user: weather
 db_name: weather
+db_password: weather

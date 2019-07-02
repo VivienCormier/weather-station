@@ -6,9 +6,9 @@
 
   hosts: raspberry
   roles:
-    - update
-    - package
-    - createdb
+    # - update
+    # - package
+    # - createdb
     - dashboard
   remote_user: pi
   become: yes
